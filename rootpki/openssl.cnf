@@ -1,0 +1,119 @@
+[ ca ]
+default_ca      = CA_default
+
+[ CA_default ]
+dir             = .
+certs           = $dir/ca/certs
+new_certs_dir   = $dir/ca/newcerts
+database        = $dir/ca/index.txt
+certificate     = $dir/ca/ca.pem
+serial          = $dir/ca/serial
+private_key     = $dir/ca/ca.key
+default_days    = 365
+default_md      = sha1
+preserve        = no
+policy          = policy_match
+
+[ CA_ssl_default ]
+dir             = .
+certs           = $dir/cassl/certs
+new_certs_dir   = $dir/cassl/newcerts
+database        = $dir/cassl/index.txt
+certificate     = $dir/cassl/cassl.pem
+serial          = $dir/cassl/serial
+private_key     = $dir/cassl/cassl.key
+default_days    = 365
+default_md      = sha1
+preserve        = no
+policy          = policy_match
+
+[ CA_test ]
+dir             = .
+certs           = $dir/tltltl/certs
+new_certs_dir   = $dir/tltltl/newcerts
+database        = $dir/tltltl/index.txt
+certificate     = $dir/tltltl/tltltl.pem
+serial          = $dir/tltltl/serial
+private_key     = $dir/tltltl/tltltl.key
+default_days    = 365
+default_md      = sha1
+preserve        = no
+policy          = policy_match
+
+[ policy_match ]
+countryName             = match
+stateOrProvinceName     = match
+localityName		= match
+organizationName        = match
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+[ req ]
+distinguished_name      = req_distinguished_name
+
+[ req_distinguished_name ]
+countryName                     = Pays
+countryName_default             = FR
+stateOrProvinceName             = Departement
+stateOrProvinceName_default     = Ile-de-France
+localityName                    = Ville
+localityName_default            = Paris
+organizationName        	= Organisation
+organizationName_default        = INTECH
+commonName                      = Nom ou URL
+commonName_max                  = 64
+emailAddress                    = Adresse Email
+emailAddress_max                = 40
+
+[ROOT_CBI]
+nsComment                       = "CA Racine"
+subjectKeyIdentifier            = hash
+authorityKeyIdentifier          = keyid,issuer:always
+basicConstraints                = critical,CA:TRUE,pathlen:1
+keyUsage                        = keyCertSign, cRLSign
+
+[ROOT_CBI_G2]
+nsComment                       = "CA SSL"
+basicConstraints                = critical,CA:TRUE,pathlen:0
+subjectKeyIdentifier            = hash
+authorityKeyIdentifier          = keyid,issuer:always
+issuerAltName                   = issuer:copy
+keyUsage                        = keyCertSign, cRLSign
+nsCertType                      = sslCA
+
+[SERVER_RSA_SSL]
+nsComment                       = "Certificat Serveur SSL"
+subjectKeyIdentifier            = hash
+authorityKeyIdentifier          = keyid,issuer:always
+issuerAltName                   = issuer:copy
+subjectAltName                  = DNS:www.canbreakit.fr, DNS:www.canbreakit.fr
+basicConstraints                = critical,CA:FALSE
+keyUsage                        = digitalSignature, nonRepudiation, keyEncipherment
+nsCertType                      = server
+extendedKeyUsage                = serverAuth
+
+[CLIENT_RSA_SSL]
+nsComment                       = "Certificat Client SSL"
+subjectKeyIdentifier            = hash
+authorityKeyIdentifier          = keyid,issuer:always
+issuerAltName                   = issuer:copy
+subjectAltName                  = critical,email:copy,email:ubuntu@canbreakit.fr
+basicConstraints                = critical,CA:FALSE
+keyUsage                        = digitalSignature, nonRepudiation
+nsCertType                      = client
+extendedKeyUsage                = clientAuth
+
+
+[ CA_tftf ]
+dir             = .
+certs           = $dir/tftf/certs
+new_certs_dir   = $dir/tftf/newcerts
+database        = $dir/tftf/index.txt
+certificate     = $dir/tftf/tftf.pem
+serial          = $dir/tftf/serial
+private_key     = $dir/tftf/tftf.key
+default_days    = 365
+default_md      = sha1
+preserve        = no
+policy          = policy_match

@@ -1,0 +1,14 @@
+
+
+[ CA_test ]
+dir             = .
+certs           = $dir/tltl/certs
+new_certs_dir   = $dir/tltl/newcerts
+database        = $dir/tltl/index.txt
+certificate     = $dir/tltl/tltl.pem
+serial          = $dir/tltl/serial
+private_key     = $dir/tltl/tltl.key
+default_days    = 365
+default_md      = sha1
+preserve        = no
+policy          = policy_match

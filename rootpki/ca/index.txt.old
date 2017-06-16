@@ -1,0 +1,11 @@
+V	180613171056Z		01	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=root_cbi_g2/emailAddress=root_cbi_g2@canbreakit.fr
+V	180614045340Z		02	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=toto/emailAddress=toto@canbreakit.fr
+V	180614052758Z		03	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=tata
+V	180614071856Z		04	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=titi
+R	180614072006Z	170614072742Z	05	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=tyty
+R	180614072918Z	170614072948Z	06	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=tyty
+V	180614074424Z		07	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=toutou
+R	180614074551Z	170614074603Z	08	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=tete
+V	180614083506Z		09	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=tvtv
+V	180614091142Z		0A	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=tltltl
+R	180614123619Z	170614130311Z	0B	unknown	/C=FR/ST=Ile-de-France/L=Paris/O=INTECH/CN=tftf
